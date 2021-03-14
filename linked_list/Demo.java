@@ -3,26 +3,26 @@
 
 import java.lang.*;
 import java.util.*;
-class Node
+class Node <T>
 {
-    public int data;
+    public T data;
     public Node next;
-    public Node(int value)
+    public Node(T value)
     {
         data = value;
         next = null;
     }
 };
-class SinglyLinkedList
+class SinglyLinkedList <T>
 {
     public Node Head;
     public SinglyLinkedList()
     {
         Head = null;
     }
-    public void InsertFirst(int no)
+    public void InsertFirst(T no)
     {
-        Node newn = new Node(no);   
+        Node <T> newn = new Node<T>(no);    
         if(Head == null)
         {
             Head = newn;
@@ -33,16 +33,16 @@ class SinglyLinkedList
             Head = newn;
         }
     }
-    public void InsertLast(int no)
+    public void InsertLast(T no)
     {
-        Node newn = new Node(no);    
+        Node <T> newn = new Node <T>(no);    
         if(Head == null)
         {
             Head = newn;
         }
         else
         {
-            Node temp = Head;
+            Node <T> temp = Head;
             while(temp.next != null)
             {
                 temp = temp.next;
@@ -52,7 +52,7 @@ class SinglyLinkedList
     }
     public void Display()
     {
-        Node temp = Head;
+        Node <T> temp = Head;
         System.out.println("Elements of linked list are: ");
         
         while(temp != null)
@@ -65,7 +65,7 @@ class SinglyLinkedList
     public int Count()
     {
         int icnt = 0;
-        Node temp = Head;
+        Node  <T> temp = Head;
         while(temp != null)
         {
 			icnt++;
@@ -97,7 +97,7 @@ class SinglyLinkedList
 				Head=null;
 				return;
 			}
-			Node temp=Head;
+			Node  <T> temp=Head;
 			while(temp.next.next!=null)
 			{
 				temp=temp.next;
@@ -107,7 +107,7 @@ class SinglyLinkedList
 		}
 	}
 	
-	public void InsertAtPos(int pos,int no)
+	public void InsertAtPos(int pos,T no)
 	{
 		int i=0;
 		int size=Count();
@@ -126,9 +126,9 @@ class SinglyLinkedList
 		}
 		else 
 		{
-			Node newn=new Node(no);
+			Node <T> newn=new Node(no);
 			
-			Node temp=Head;
+			Node <T> temp=Head;
 			for(i=1;i<pos-1;i++)
 			{
 				temp=temp.next;
@@ -158,7 +158,7 @@ class SinglyLinkedList
 		else 
 		{
 			
-			Node temp=Head;
+			Node <T> temp=Head;
 			for(i=1;i<pos-1;i++)
 			{
 				temp=temp.next;
@@ -172,7 +172,13 @@ class Demo
 {
     public static void main(String arg[])
     {
-		  SinglyLinkedList obj = new SinglyLinkedList();
+		SinglyLinkedList <Float> fobj=new SinglyLinkedList <Float>();
+		
+			fobj.InsertFirst(11.5f);
+			fobj.InsertFirst(34.5f);
+			fobj.Display();
+			
+		  SinglyLinkedList <Integer> obj = new SinglyLinkedList <Integer>();
 		Scanner sobj=new Scanner(System.in);
 		
 		int choice=1;
@@ -246,4 +252,5 @@ class Demo
 		System.out.println("thank you for using our linked list ");
 		obj.Head=null;
 }
+
 }
