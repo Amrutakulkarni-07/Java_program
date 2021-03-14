@@ -22,7 +22,7 @@ class SinglyLinkedList
     }
     public void InsertFirst(int no)
     {
-        Node newn = new Node(no);    // Kamal statement ahe
+        Node newn = new Node(no);    
         if(Head == null)
         {
             Head = newn;
@@ -35,7 +35,7 @@ class SinglyLinkedList
     }
     public void InsertLast(int no)
     {
-        Node newn = new Node(no);    // Kamal statement ahe
+        Node newn = new Node(no);   
         if(Head == null)
         {
             Head = newn;
