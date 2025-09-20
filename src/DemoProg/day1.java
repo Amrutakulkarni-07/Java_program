@@ -13,8 +13,6 @@ public class day1 {
 		{
 		System.out.println("Enter a string which you want to reverse:");
 		String res=scanner.nextLine();
-		
-		
 		String rev=StrRev(res);
 		
 		System.out.println("Reversed string is :"+rev);
